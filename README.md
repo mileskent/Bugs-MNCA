@@ -1,4 +1,5 @@
-# Multiple Neighbor Cellular Automata
+# Machine Architecture Final Project
+## Multiple Neighbor Cellular Automata
 Goal: create a Multiple Neighbhor Cellular Automata program in C++ using SFML 
 that runs at at least 60 fps and involves user input, likely in the form of the mouse.
 
