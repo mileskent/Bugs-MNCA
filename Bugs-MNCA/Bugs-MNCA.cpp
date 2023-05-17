@@ -74,37 +74,7 @@ int main()
     texture.update(pixels);
     Sprite sprite;
 
-    // generate the neighborhoods
-
-    Vector2f smallnh[36];
-    size_t c = 0;
-
-    for (int x = -4; x <= 4; x++)
-    {
-        for (int y = -4; y <= 4; y++)
-        {
-            float d = dist(Vector2f(0, 0), Vector2f(x, y));
-            if (d > 0 && d <= 3.51)
-            {
-                smallnh[c++] = Vector2f(x, y);
-            }
-        }
-    }
-
-    Vector2f bignh[108];
-    c = 0;
-
-    for (int x = -8; x <= 8; x++)
-    {
-        for (int y = -8; y <= 8; y++)
-        {
-            float d = dist(Vector2f(0, 0), Vector2f(x, y));
-            if (d >= 4.51 && d <= 7.51)
-            {
-                bignh[c++] = Vector2f(x, y);
-            }
-        }
-    }
+   
 
     clock_t start_t, end_t;
     while (window.isOpen())
@@ -119,52 +89,7 @@ int main()
 
         window.clear();
 
-        if (run)
-        {
-            for (size_t k = 0; k < PIXEL_SIZE; k += 4)
-            {
-                Vector2f pk = i2xy(k);
-
-                float nh0 = 0;  
-                float nh1 = 0;
-
-                int c1 = 0;
-                for (int i = 0; i < 36; i++)
-                {
-                    if (inbound(pk + smallnh[i]))
-                    {
-                        c1++;
-                        nh0 += pixels[xy2i(pk + smallnh[i])];
-                    }
-
-                }
-                nh0 /= c1;
-
-
-                int c2 = 0;
-                for (int i = 0; i < 108; i++)
-                {
-                    if (inbound(pk + bignh[i]))
-                    {
-                        c2++;
-                        nh1 += pixels[xy2i(pk + bignh[i])];
-                    }
-
-                }
-                nh1 /= c2;
-
-                if (nh0 <= 25) { *(pixels + k) = 0; }
-                else if (nh0 <= 50 && nh0 >= 25) { *(pixels + k) = 0; }
-                else if (nh0 >= 190) { *(pixels + k) = 255; }
-
-                if (nh1 >= 50 && nh1 <= 71) { *(pixels + k) = 0; }
-                else if (nh1 >= 109 && nh1 <= 140) { *(pixels + k) = 255; }
-                else if (nh1 >= 140 && nh1 <= 255) { *(pixels + k) = 0; }
-
-                *(pixels + k + 1) = *(pixels + k);
-                *(pixels + k + 2) = *(pixels + k);
-            }
-        }
+       
         texture.update(pixels);
         sprite.setTexture(texture);
         window.draw(sprite);

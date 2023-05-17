@@ -1,66 +1,26 @@
 ﻿  Bugs-MNCA.cpp
 C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(50,45): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(50,19): warning C4244: 'initializing': conversion from 'float' to 'sf::Uint8', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(86,56): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(107,53): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(86,53): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(107,29): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(89,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(111,35): warning C4244: 'return': conversion from 'T' to 'size_t', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(89,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(101,56): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(101,53): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(104,42): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(104,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(182,53): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(182,29): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(186,35): warning C4244: 'return': conversion from 'T' to 'size_t', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(194,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(212,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(213,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(220,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(220,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(221,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(221,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(119,16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(137,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(138,15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(145,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(145,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(146,34): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(146,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Bugs-MNCA.vcxproj -> C:\Users\miles\source\repos\Bugs-MNCA\x64\Debug\Bugs-MNCA.exe
