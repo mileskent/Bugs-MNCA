@@ -3,7 +3,7 @@
 
 #define SIZE_X 1920
 #define SIZE_Y 1080
-#define PIXEL_SIZE 
+#define PIXEL_SIZE SIZE_X * SIZE_Y * 4
 
 int main()
 {
