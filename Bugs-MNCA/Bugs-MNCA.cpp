@@ -125,7 +125,7 @@ int main()
             {
                 Vector2f pk = i2xy(k);
 
-                float nh0 = 0;
+                float nh0 = 0;  
                 float nh1 = 0;
 
                 int c1 = 0;
