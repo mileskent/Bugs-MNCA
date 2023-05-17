@@ -1,168 +1,62 @@
-#include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
 #include <SFML/Graphics.hpp>
-#include <math.h>
-#include <time.h>
-using namespace sf;
-using namespace std;
-constexpr unsigned int SCREEN_WIDTH = 200;
-constexpr unsigned int SCREEN_HEIGHT = SCREEN_WIDTH;
-constexpr unsigned int PIXEL_SIZE = SCREEN_WIDTH * SCREEN_HEIGHT * 4;
+#include <iostream>
 
-static int SEED = 0;
+int main() {
+	const float winW = 800;
+	const float winH = 600;
 
-int perlinhash[] = { 208,34,231,213,32,248,233,56,161,78,24,140,71,48,140,254,245,255,247,247,40,
-                     185,248,251,245,28,124,204,204,76,36,1,107,28,234,163,202,224,245,128,167,204,
-                     9,92,217,54,239,174,173,102,193,189,190,121,100,108,167,44,43,77,180,204,8,81,
-                     70,223,11,38,24,254,210,210,177,32,81,195,243,125,8,169,112,32,97,53,195,13,
-                     203,9,47,104,125,117,114,124,165,203,181,235,193,206,70,180,174,0,167,181,41,
-                     164,30,116,127,198,245,146,87,224,149,206,57,4,192,210,65,210,129,240,178,105,
-                     228,108,245,148,140,40,35,195,38,58,65,207,215,253,65,85,208,76,62,3,237,55,89,
-                     232,50,217,64,244,157,199,121,252,90,17,212,203,149,152,140,187,234,177,73,174,
-                     193,100,192,143,97,53,145,135,19,103,13,90,135,151,199,91,239,247,33,39,145,
-                     101,120,99,3,186,86,99,41,237,203,111,79,220,135,158,42,30,154,120,67,87,167,
-                     135,176,183,191,253,115,184,21,233,58,129,233,142,39,128,211,118,137,139,255,
-                     114,20,218,113,154,27,127,246,250,1,8,198,250,209,92,222,173,21,88,102,219 };
+	sf::RenderWindow window(sf::VideoMode(winW, winH), "SFML Shader Example");
+	window.setMouseCursorVisible(false); // hide the cursor
 
-Vector2f i2xy(size_t k);
-size_t xy2i(Vector2f p);
-bool inbound(Vector2f p);
-float dist(Vector2f p1, Vector2f p2);
-float perlin2d(float x, float y, float freq, int depth);
-int noise2(int x, int y);
-float lin_inter(float x, float y, float s);
-float smooth_inter(float x, float y, float s);
-float noise2d(float x, float y);
+	// Create a texture and a sprite for the shader
+	sf::Texture tex;
+	tex.create(winW, winH);
+	sf::Sprite spr(tex);
 
-bool run = true;
+	sf::Shader shader;
 
-int main()
-{
-    RenderWindow window(VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Window Title");
-    window.setFramerateLimit(60);
+	if (!sf::Shader::isAvailable())
+	{
+		std::cout << "SHADER NOT AVAILABLE!!!\n";
+	}
+	else
+	{
+		std::cout << "Shader should be available.\n";
+	}
+	
+	if (!shader.loadFromFile(".\\fire.glsl", sf::Shader::Fragment))
+	{
+		std::cout << "Error loading shader!\n";
+	}
 
-    Uint8* pixels = new Uint8[PIXEL_SIZE];
+	// Set the resolution parameter (the resoltion is divided to make the fire smaller)
+	shader.setUniform("resolution", sf::Glsl::Vec2(winW / 2, winH / 2));
 
-    for (size_t k = 0; k < PIXEL_SIZE; k += 4)
-    {
-        Vector2f a = i2xy(k);
-        Uint8 val = perlin2d(a.x, a.y, .3, 4) * 255;
-        if (val < 157)
-            val = 0;
-        else
-            val = 255;
-        *(pixels + k) = val;
-        *(pixels + k + 1) = *(pixels + k);
-        *(pixels + k + 2) = *(pixels + k);
-        *(pixels + k + 3) = 255;
-    }
+	// Use a timer to obtain the time elapsed
+	sf::Clock clk;
+	clk.restart(); // start the timer
 
-    if (pixels != NULL)
-    {
-        printf("Pixels intialized.\n");
-    }
-    else
-    {
-        window.close();
-        delete[] pixels;
-        return 0;
-    }
+	while (window.isOpen()) {
+		// Event handling
+		sf::Event event;
 
-    Texture texture;
-    texture.create(SCREEN_WIDTH, SCREEN_HEIGHT);
-    texture.update(pixels);
-    Sprite sprite;
+		while (window.pollEvent(event)) {
+			// Exit the app when a key is pressed
+			if (event.type == sf::Event::KeyPressed)
+				window.close();
+		}
 
-   
+		// Set the others parameters who need to be updated every frames
+		shader.setUniform("time", clk.getElapsedTime().asSeconds());
 
-    clock_t start_t, end_t;
-    while (window.isOpen())
-    {
-        start_t = clock();
-        Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == Event::Closed)
-                window.close();
-        }
+		sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+		shader.setUniform("mouse", sf::Glsl::Vec2(mousePos.x, mousePos.y - winH / 2));
 
-        window.clear();
+		// Draw the sprite with the shader on it
+		window.clear();
+		window.draw(spr, &shader);
+		window.display();
+	}
 
-       
-        texture.update(pixels);
-        sprite.setTexture(texture);
-        window.draw(sprite);
-        window.display();
-        end_t = clock();
-        printf("fps: %f\n", 1 / ((double)(end_t - start_t) / CLOCKS_PER_SEC));
-    }
-
-    delete[] pixels;
-    return 0;
-}
-
-Vector2f i2xy(size_t k)
-{
-    return Vector2f((k / 4) % SCREEN_WIDTH, (k / 4) / SCREEN_WIDTH);
-}
-size_t xy2i(Vector2f p)
-{
-    return p.y * SCREEN_WIDTH * 4 + p.x * 4;
-}
-bool inbound(Vector2f p)
-{
-    return (p.x >= 0 && p.x <= SCREEN_WIDTH && p.y >= 0 && p.y <= SCREEN_HEIGHT);
-}
-float dist(Vector2f p1, Vector2f p2)
-{
-    return sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
-}
-
-int noise2(int x, int y)
-{
-    int tmp = perlinhash[(y + SEED) % 256];
-    return perlinhash[(tmp + x) % 256];
-}
-float lin_inter(float x, float y, float s)
-{
-    return x + s * (y - x);
-}
-float smooth_inter(float x, float y, float s)
-{
-    return lin_inter(x, y, s * s * (3 - 2 * s));
-}
-float noise2d(float x, float y)
-{
-    int x_int = x;
-    int y_int = y;
-    float x_frac = x - x_int;
-    float y_frac = y - y_int;
-    int s = noise2(x_int, y_int);
-    int t = noise2(x_int + 1, y_int);
-    int u = noise2(x_int, y_int + 1);
-    int v = noise2(x_int + 1, y_int + 1);
-    float low = smooth_inter(s, t, x_frac);
-    float high = smooth_inter(u, v, x_frac);
-    return smooth_inter(low, high, y_frac);
-}
-float perlin2d(float x, float y, float freq, int depth)
-{
-    float xa = x * freq;
-    float ya = y * freq;
-    float amp = 1.0;
-    float fin = 0;
-    float div = 0.0;
-
-    int i;
-    for (i = 0; i < depth; i++)
-    {
-        div += 256 * amp;
-        fin += noise2d(xa, ya) * amp;
-        amp /= 2;
-        xa *= 2;
-        ya *= 2;
-    }
-
-    return fin / div;
+	return 0;
 }
