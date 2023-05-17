@@ -1,2 +1,12 @@
 ﻿  Bugs-MNCA.cpp
+C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(27,50): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(27,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   Bugs-MNCA.vcxproj -> C:\Users\Jay Motamarry\Desktop\Buggy\x64\Debug\Bugs-MNCA.exe
