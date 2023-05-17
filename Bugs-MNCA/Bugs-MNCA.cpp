@@ -3,13 +3,14 @@
 
 #define SIZE_X 1920
 #define SIZE_Y 1080
+#define PIXEL_SIZE 
 
 int main()
 {
     sf::err().rdbuf(NULL);
-    sf::RenderWindow window(sf::VideoMode(SIZE_X, SIZE_Y), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window(sf::VideoMode(SIZE_X, SIZE_Y), "This a window");
+    window.clear();
+    sf::Uint8* pixels = new sf::Uint8[PIXEL_SIZE];
     while (window.isOpen())
     {
         sf::Event event;
@@ -18,9 +19,6 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
-        window.draw(shape);
-        window.clear();
 
         for (int x = 0; x < SIZE_X; x++) {
             for (int y = 0; y < SIZE_Y; y++) {
