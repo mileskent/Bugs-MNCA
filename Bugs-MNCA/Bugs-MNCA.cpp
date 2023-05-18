@@ -33,7 +33,7 @@ int main()
     return 0;
 } */
 #define NOMINMAX
-#define SIZE_X 450
+#define SIZE_X 400
 #define SIZE_Y 400
 #define SIZE_ARR SIZE_X * SIZE_Y * 4
 
