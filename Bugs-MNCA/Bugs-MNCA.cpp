@@ -26,15 +26,16 @@ int main() {
 		return 1;
 	}
 
-	while (window.isOpen()) {
+	shader.setUniform("u_resolution", sf::Glsl::Vec2{ window.getSize() });
+
+	while (window.isOpen()) 
+	{
 		sf::Event event;
 
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::KeyPressed)
 				window.close();
 		}
-
-		shader.setUniform("u_time", (float)clock());
 
 		window.clear();
 		window.draw(spr, &shader);
