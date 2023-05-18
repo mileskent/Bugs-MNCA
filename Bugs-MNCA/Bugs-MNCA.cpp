@@ -2,6 +2,7 @@
 #include <iostream>
 
 int main() {
+	sf::err().rdbuf(NULL);
 	const float winW = 800;
 	const float winH = 600;
 
