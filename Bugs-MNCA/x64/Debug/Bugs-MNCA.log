@@ -1,9 +1,9 @@
 ﻿  Bugs-MNCA.cpp
-C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(9,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(9,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(14,19): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(14,13): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(54,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(9,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(9,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(14,19): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(14,13): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(54,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -12,4 +12,4 @@ C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(54,53): warning C42
           [
               T=float
           ]
-  Bugs-MNCA.vcxproj -> C:\Users\Jay Motamarry\Desktop\Buggy\x64\Debug\Bugs-MNCA.exe
+  Bugs-MNCA.vcxproj -> C:\Users\miles\source\repos\Bugs-MNCA\x64\Debug\Bugs-MNCA.exe
