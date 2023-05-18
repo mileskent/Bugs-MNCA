@@ -26,8 +26,6 @@ int main() {
 		return 1;
 	}
 
-	shader.setUniform("texture", sf::Shader::CurrentTexture);
-
 	while (window.isOpen()) {
 		sf::Event event;
 
@@ -36,7 +34,7 @@ int main() {
 				window.close();
 		}
 
-		shader.setUniform("u_time", clock());
+		shader.setUniform("u_time", (float)clock());
 
 		window.clear();
 		window.draw(spr, &shader);
