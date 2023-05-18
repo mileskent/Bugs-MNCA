@@ -12,4 +12,9 @@ C:\Users\Jay Motamarry\Desktop\Buggy\Bugs-MNCA\Bugs-MNCA.cpp(54,53): warning C42
           [
               T=float
           ]
-  Bugs-MNCA.vcxproj -> C:\Users\Jay Motamarry\Desktop\Buggy\x64\Debug\Bugs-MNCA.exe
+  Generating code
+  0 of 75 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Bugs-MNCA.vcxproj -> C:\Users\Jay Motamarry\Desktop\Buggy\x64\Release\Bugs-MNCA.exe
