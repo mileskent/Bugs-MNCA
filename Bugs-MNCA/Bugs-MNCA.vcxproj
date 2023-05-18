@@ -136,7 +136,7 @@
     <ClCompile Include="Bugs-MNCA.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="fire.glsl" />
+    <None Include="mnca.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

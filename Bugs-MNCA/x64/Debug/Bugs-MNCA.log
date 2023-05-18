@@ -1,1 +1,6 @@
-﻿  Bugs-MNCA.vcxproj -> C:\Users\miles\source\repos\Bugs-MNCA\x64\Debug\Bugs-MNCA.exe
+﻿  Bugs-MNCA.cpp
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(9,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(9,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(14,19): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(14,13): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+  Bugs-MNCA.vcxproj -> C:\Users\miles\source\repos\Bugs-MNCA\x64\Debug\Bugs-MNCA.exe
