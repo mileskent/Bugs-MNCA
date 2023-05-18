@@ -1,6 +1,10 @@
 ﻿  Bugs-MNCA.cpp
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(9,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(9,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(14,19): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(14,13): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-  Bugs-MNCA.vcxproj -> C:\Users\miles\source\repos\Bugs-MNCA\x64\Debug\Bugs-MNCA.exe
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(11,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(11,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(17,19): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(17,13): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(39,9): error C2668: 'sf::Shader::setUniform': ambiguous call to overloaded function
+C:\Users\miles\source\repos\Bugs-MNCA\SFML-2.5.1\include\SFML\Graphics\Shader.hpp(386,10): message : could be 'void sf::Shader::setUniform(const std::string &,bool)'
+C:\Users\miles\source\repos\Bugs-MNCA\SFML-2.5.1\include\SFML\Graphics\Shader.hpp(342,10): message : or       'void sf::Shader::setUniform(const std::string &,int)'
+C:\Users\miles\source\repos\Bugs-MNCA\SFML-2.5.1\include\SFML\Graphics\Shader.hpp(297,10): message : or       'void sf::Shader::setUniform(const std::string &,float)'
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(39,9): message : while trying to match the argument list '(const char [7], clock_t)'

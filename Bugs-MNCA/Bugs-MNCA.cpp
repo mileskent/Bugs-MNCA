@@ -1,13 +1,16 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <time.h>
 
 int main() {
 	sf::err().rdbuf(NULL);
 	const float winW = 800;
 	const float winH = 800;
 
+
 	sf::RenderWindow window(sf::VideoMode(winW, winH), "SFML Shader Example");
 	// window.setMouseCursorVisible(false); // hide the cursor
+	window.setFramerateLimit(60);
 
 	// Create a texture and a sprite for the shader
 	sf::Texture tex;
@@ -32,6 +35,8 @@ int main() {
 			if (event.type == sf::Event::KeyPressed)
 				window.close();
 		}
+
+		shader.setUniform("u_time", clock());
 
 		window.clear();
 		window.draw(spr, &shader);
