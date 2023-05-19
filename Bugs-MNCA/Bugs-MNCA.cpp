@@ -26,7 +26,7 @@ int main() {
 		return 1;
 	}
 
-	shader.setUniform("u_resolution", sf::Glsl::Vec2{ window.getSize() });
+	shader.setUniform("u_resolution", sf::Vector2f(winW, winH));
 
 	while (window.isOpen()) 
 	{
@@ -37,6 +37,7 @@ int main() {
 				window.close();
 		}
 
+		shader.setUniform("u_time", (float)clock());
 		window.clear();
 		window.draw(spr, &shader);
 		window.display();
