@@ -8,7 +8,7 @@ int main() {
 	const float winH = 800;
 
 
-	sf::RenderWindow window(sf::VideoMode(winW, winH), "SFML Shader Example");
+	sf::RenderWindow window(sf::VideoMode(winW, winH), "Bugs-MNCA");
 	// window.setMouseCursorVisible(false); // hide the cursor
 	window.setFramerateLimit(60);
 
