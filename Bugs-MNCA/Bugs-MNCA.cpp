@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <time.h>
+#include <stdlib.h>
 
 int main() {
 	sf::err().rdbuf(NULL);
@@ -17,6 +18,21 @@ int main() {
 	tex.create(winW, winH);
 	sf::Sprite spr(tex);
 
+	sf::Uint8 * pixels = new sf::Uint8[winH * winW];
+
+	for (size_t k = 0; k < winH * winW; k += 4)
+	{
+		sf::Uint8 val = rand() % 256;
+		*(pixels + k) = val;
+		*(pixels + k + 1) = *(pixels + k);
+		*(pixels + k + 2) = *(pixels + k);
+		*(pixels + k + 3) = 255;
+	}
+
+	tex.update(pixels);
+	spr.setTexture(tex);
+	delete[] pixels;
+
 	sf::Shader shader;
 
 
@@ -28,7 +44,7 @@ int main() {
 
 	shader.setUniform("u_resolution", sf::Vector2f(winW, winH));
 
-	while (window.isOpen()) 
+	while (window.isOpen())
 	{
 		sf::Event event;
 

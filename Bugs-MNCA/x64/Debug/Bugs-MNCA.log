@@ -1,6 +1,8 @@
 ﻿  Bugs-MNCA.cpp
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(11,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(11,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(17,19): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
-C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(17,13): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(12,46): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(12,40): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(18,19): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(18,13): warning C4244: 'argument': conversion from 'const float' to 'unsigned int', possible loss of data
+C:\Users\miles\source\repos\Bugs-MNCA\Bugs-MNCA\Bugs-MNCA.cpp(21,42): warning C4244: 'initializing': conversion from 'float' to 'size_t', possible loss of data
+  LINK : C:\Users\miles\source\repos\Bugs-MNCA\x64\Debug\Bugs-MNCA.exe not found or not built by the last incremental link; performing full link
   Bugs-MNCA.vcxproj -> C:\Users\miles\source\repos\Bugs-MNCA\x64\Debug\Bugs-MNCA.exe
