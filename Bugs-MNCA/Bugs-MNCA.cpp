@@ -17,8 +17,8 @@ int main()
     Clock uptime;
     Event event;
 
-    RenderWindow* window = new RenderWindow(VideoMode(resolution, resolution), "Game of Life GLSL");
-    window->setFramerateLimit(60);
+    RenderWindow window(VideoMode(resolution, resolution), "Game of Life GLSL");
+    window.setFramerateLimit(60);
 
     VertexArray canvas(Quads, 4);
     canvas[0] = Vertex(Vector2f(0, 0), Color::White, Vector2f(0, 0));
@@ -71,15 +71,15 @@ int main()
     float start = 0;
     float end = 0;
 
-    while (window->isOpen())
+    while (window.isOpen())
     {
 
-        while (window->pollEvent(event))
+        while (window.pollEvent(event))
         {
             switch (event.type)
             {
             case Event::Closed:
-                window->close();
+                window.close();
                 break;
             case Event::MouseWheelScrolled:
                 zoom += event.mouseWheelScroll.delta * .1;
@@ -107,18 +107,13 @@ int main()
         }
 
 
-        //"Draw" the current generation to the next generation.
-        //The Game of Life simulation is happening here.
         nextGen->draw(canvas, states);
         nextGen->display();
 
-        //Now swap the pointers to the Renderbuffers, so we do not need to copy any
-        //texture data around.
         RenderTexture* swap = currentGen;
         currentGen = nextGen;
         nextGen = swap;
 
-        //if the left mousebutton is pressed, we need to calculate the scrolling offset
         if (drag)
         {
             Glsl::Vec2 offset;
@@ -130,27 +125,22 @@ int main()
             current_offset += offset;
             dragOrigin = Glsl::Vec2(Mouse::getPosition());
         }
-        //Prepare the textures and uniforms, so they can be drawn to our window
+
         dispStates.texture = &currentGen->getTexture();
         dispShader.setUniform("offset", current_offset);
 
 
-        //Now we can draw everything
-        window->draw(canvas, dispStates);
-        window->display();
+        window.draw(canvas, dispStates);
+        window.display();
 
-
-        //Add our text and update the frametimes
         end = uptime.getElapsedTime().asSeconds();
 
         start = uptime.getElapsedTime().asSeconds();
         generation++;
     }
 
-    //Clean up after yourself. ;)
     delete currentGen;
     delete nextGen;
-    delete window;
 
     return 0;
 }
