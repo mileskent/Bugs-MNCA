@@ -1,7 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-#define resolution 200
+#define resolution 255
 
 
 using namespace std;
