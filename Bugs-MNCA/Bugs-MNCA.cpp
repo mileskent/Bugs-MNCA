@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <time.h>
 
 #define resolution 1000
 
@@ -17,7 +18,7 @@ int main()
     Event event;
 
     RenderWindow window(VideoMode(resolution, resolution), "Multiple Neighbor Cellular Automata");
-    window.setFramerateLimit(100);
+    window.setFramerateLimit(70);
 
     VertexArray canvas(Quads, 4);
     canvas[0] = Vertex(Vector2f(0, 0), Color::White, Vector2f(0, 0));
@@ -67,11 +68,11 @@ int main()
     RenderStates dispStates;
     dispStates.shader = &dispShader;
 
-    float start = 0;
-    float end = 0;
-
+    clock_t start_t, end_t;
+    
     while (window.isOpen())
     {
+        start_t = clock();
 
         while (window.pollEvent(event))
         {
@@ -132,10 +133,10 @@ int main()
         window.draw(canvas, dispStates);
         window.display();
 
-        end = uptime.getElapsedTime().asSeconds();
-
-        start = uptime.getElapsedTime().asSeconds();
         generation++;
+
+        end_t = clock();
+        printf("fps: %f\n", 1 / ((double)(end_t - start_t) / CLOCKS_PER_SEC));
     }
 
     delete currentGen;
