@@ -3,8 +3,6 @@
 
 #define resolution 1000
 
-// reference/goal: https://www.shadertoy.com/view/7dByzw
-
 using namespace std;
 using namespace sf;
 
@@ -19,7 +17,7 @@ int main()
     Event event;
 
     RenderWindow window(VideoMode(resolution, resolution), "Multiple Neighbor Cellular Automata");
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(100);
 
     VertexArray canvas(Quads, 4);
     canvas[0] = Vertex(Vector2f(0, 0), Color::White, Vector2f(0, 0));
