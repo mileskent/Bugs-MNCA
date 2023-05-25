@@ -17,7 +17,7 @@ int main()
     Clock uptime;
     Event event;
 
-    RenderWindow window(VideoMode(resolution, resolution), "Game of Life GLSL");
+    RenderWindow window(VideoMode(resolution, resolution), "Multineighbor Cellular Automata");
     window.setFramerateLimit(60);
 
     VertexArray canvas(Quads, 4);
