@@ -3,6 +3,7 @@
 
 #define resolution 1000
 
+// reference/goal: https://www.shadertoy.com/view/7dByzw
 
 using namespace std;
 using namespace sf;
@@ -17,7 +18,7 @@ int main()
     Clock uptime;
     Event event;
 
-    RenderWindow window(VideoMode(resolution, resolution), "Multineighbor Cellular Automata");
+    RenderWindow window(VideoMode(resolution, resolution), "Multiple Neighbor Cellular Automata");
     window.setFramerateLimit(60);
 
     VertexArray canvas(Quads, 4);
