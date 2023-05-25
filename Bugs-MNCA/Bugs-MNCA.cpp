@@ -1,8 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
-#define resolution 255
-
+#define resolution 1000
 
 using namespace std;
 using namespace sf;
@@ -36,9 +35,9 @@ int main()
 
     Image* initState = new Image;
     initState->create(resolution, resolution);
-    for (Uint8 y = 0; y < resolution; y++)
+    for (unsigned int y = 0; y < resolution; y++)
     {
-        for (Uint8 x = 0; x < resolution; x++)
+        for (unsigned int x = 0; x < resolution; x++)
         {
             unsigned char color = (rand() % 2) * 255;
             initState->setPixel(x, y, Color(color, color, color, 255));
