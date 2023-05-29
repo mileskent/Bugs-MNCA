@@ -18,7 +18,7 @@ int main()
     Event event;
 
     RenderWindow window(VideoMode(resolution, resolution), "Multiple Neighbor Cellular Automata");
-    window.setFramerateLimit(70);
+    window.setFramerateLimit(60);
 
     VertexArray canvas(Quads, 4);
     canvas[0] = Vertex(Vector2f(0, 0), Color::White, Vector2f(0, 0));
