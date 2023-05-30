@@ -57,6 +57,7 @@ int main()
     shader.loadFromFile("fragment.glsl", Shader::Fragment);
     shader.setUniform("resolution", float(resolution));
 
+
     Shader dispShader;
     dispShader.loadFromFile("display_fragment.glsl", Shader::Fragment);
     dispShader.setUniform("zoom", zoom);
@@ -136,7 +137,7 @@ int main()
         generation++;
 
         end_t = clock();
-        printf("fps: %f\n", 1 / ((double)(end_t - start_t) / CLOCKS_PER_SEC));
+        printf("fps: %f\n", CLOCKS_PER_SEC / ((double)(end_t - start_t)));
     }
 
     delete currentGen;
