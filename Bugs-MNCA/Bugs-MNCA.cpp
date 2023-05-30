@@ -62,11 +62,6 @@ int main()
     dispShader.loadFromFile("display_fragment.glsl", Shader::Fragment);
     dispShader.setUniform("zoom", zoom);
 
-    Shader blurShader;
-    blurShader.loadFromFile("blur.glsl", Shader::Fragment);
-    blurShader.setUniform("resolution", float(resolution));
-
-
     RenderStates states;
     states.shader = &shader;
     states.texture = &currentGen->getTexture();
@@ -142,7 +137,7 @@ int main()
         generation++;
 
         end_t = clock();
-        printf("fps: %f\n", 1 / ((double)(end_t - start_t) / CLOCKS_PER_SEC));
+        printf("fps: %f\n", CLOCKS_PER_SEC / ((double)(end_t - start_t)));
     }
 
     delete currentGen;
