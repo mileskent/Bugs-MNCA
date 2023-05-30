@@ -57,9 +57,15 @@ int main()
     shader.loadFromFile("fragment.glsl", Shader::Fragment);
     shader.setUniform("resolution", float(resolution));
 
+
     Shader dispShader;
     dispShader.loadFromFile("display_fragment.glsl", Shader::Fragment);
     dispShader.setUniform("zoom", zoom);
+
+    Shader blurShader;
+    blurShader.loadFromFile("blur.glsl", Shader::Fragment);
+    blurShader.setUniform("resolution", float(resolution));
+
 
     RenderStates states;
     states.shader = &shader;
