@@ -18,7 +18,7 @@ int main()
     Event event;
 
     RenderWindow window(VideoMode(resolution, resolution), "Multiple Neighbor Cellular Automata");
-    window.setFramerateLimit(60);
+    window.setFramerateLimit(100);
 
     VertexArray canvas(Quads, 4);
     canvas[0] = Vertex(Vector2f(0, 0), Color::White, Vector2f(0, 0));
@@ -61,6 +61,7 @@ int main()
     Shader dispShader;
     dispShader.loadFromFile("display_fragment.glsl", Shader::Fragment);
     dispShader.setUniform("zoom", zoom);
+    dispShader.setUniform("resolution", resolution);
 
     RenderStates states;
     states.shader = &shader;
