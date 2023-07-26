@@ -2,4 +2,4 @@
 ## Multiple Neighbor Cellular Automata
   Goal: create a Multiple Neighbhor Cellular Automata program in C++ using SFML and shaders
 
-https://youtu.be/-WAMfXis2Mo
+Demo: https://youtu.be/-WAMfXis2Mo
